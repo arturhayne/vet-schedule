@@ -1,0 +1,32 @@
+[
+    {
+        "datetime_from":"2020-11-30T10:00:00-05:00",
+        "datetime_to":"2020-11-30T11:00:00-05:00",
+        "label":"Appointment"
+    },
+    {
+        "datetime_from":"2020-11-30T11:00:00-05:00",
+        "datetime_to":"2020-11-30T12:00:00-05:00",
+        "label":"Appointment"
+    },
+    {
+        "datetime_from":"2020-11-30T12:00:00-05:00",
+        "datetime_to":"2020-11-30T13:00:00-05:00",
+        "label":"Appointment"
+    },
+    {
+        "datetime_from":"2020-11-30T14:00:00-05:00",
+        "datetime_to":"2020-11-30T15:00:00-05:00",
+        "label":"Appointment"
+    },
+    {
+        "datetime_from":"2020-11-30T17:00:00-05:00",
+        "datetime_to":"2020-11-30T18:00:00-05:00",
+        "label":"Appointment"
+    },
+    {
+        "datetime_from":"2020-12-03T11:00:00-05:00",
+        "datetime_to":"2020-12-03T16:00:00-05:00",
+        "label":"Hockey Game"
+    }
+]

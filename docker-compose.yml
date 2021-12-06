@@ -1,0 +1,13 @@
+version: '3.5'
+
+services:
+  web:
+    container_name: vet-schedule
+    ports:
+      - "8000:8000"
+    volumes:
+      - .:/var/www/html
+      - /var/www/html/vendor/
+    build: .
+    command: php -S web:8000 -t public
+    restart: always
