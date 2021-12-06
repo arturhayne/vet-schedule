@@ -19,7 +19,7 @@ Model: vet-schedule/app/Models
 - Docker 
 
 ### How to run
-- docker-compose up -d
+- docker-compose up -d --build
 
 ### Inside container
 - docker exec -it vet-schedule sh
