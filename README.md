@@ -7,13 +7,13 @@ Our veterinarians are asking for a system that allows them to manage their sched
 Data is a .json file in vet-schedule/app/data
 
 ### Classes 
-Controller: vet-schedule/app/Http/Controllers/CheckAvailableTimeController
+Controller: [vet-schedule/app/Http/Controllers/CheckAvailableTimeController](https://github.com/arturhayne/vet-schedule/blob/master/app/Http/Controllers/CheckAvailableTimeController.php)
 
 Model: vet-schedule/app/Models
-- Appointments
-- Appointment
-- AppointmentHandler
-- CheckDateTimeResponse
+- [Appointments](https://github.com/arturhayne/vet-schedule/blob/master/app/Models/Appointments.php)
+- [Appointment](https://github.com/arturhayne/vet-schedule/blob/master/app/Models/Appointment.php)
+- [AppointmentHandler](https://github.com/arturhayne/vet-schedule/blob/master/app/Models/AppointmentHandler.php)
+- [CheckDateTimeResponse](https://github.com/arturhayne/vet-schedule/blob/master/app/Models/Appointment.php)
  
 ### Requirements
 - Docker 
@@ -25,7 +25,7 @@ Model: vet-schedule/app/Models
 - docker exec -it vet-schedule sh
 
 ### Run tests
-- docker run --rm -it --volume %cd%:/app php bash -c "cd app/; php vendor/bin/phpunit"
+- vendor/bin/phpunit --testdox (inside container)
 
 ```
 PHPUnit 9.5.10 by Sebastian Bergmann and contributors.
@@ -115,4 +115,4 @@ Response:
 ```
 
 ## More info
- - vet-schedule/info
+ - [vet-schedule/info](https://github.com/arturhayne/vet-schedule/tree/master/info)
