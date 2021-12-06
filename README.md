@@ -4,7 +4,7 @@
 Our veterinarians are asking for a system that allows them to manage their schedule by giving them the ability to **enter time periods when they are not available** (such as when an appointment is booked, or if they have to run an errand). Since we are a global company, this solution will need to incorporate time zones. 
 
 ### Data
-Data is a .json file in vet-schedule/app/data
+A .json file in [vet-schedule/app/data](https://github.com/arturhayne/vet-schedule/blob/master/app/data/blocks.json) provides the appointments already booked.
 
 ### Classes 
 Controller: [vet-schedule/app/Http/Controllers/CheckAvailableTimeController](https://github.com/arturhayne/vet-schedule/blob/master/app/Http/Controllers/CheckAvailableTimeController.php)
