@@ -6,38 +6,31 @@ namespace App\Http\Controllers;
 use App\Models\AppointmentHandler;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use VetSchedule\Application\CheckAvailableTimeQueryHandler;
 
 class CheckAvailableTimeController extends Controller
 {
     /**
-     * @var AppointmentHandler
+     * @var CheckAvailableTimeQueryHandler
      */
     private $handler;
 
     /**
      * CheckAvailableTimeController constructor.
-     * @param AppointmentHandler|null $handler
+     * @param CheckAvailableTimeQueryHandler $handler
      */
-    public function __construct(AppointmentHandler $handler = null)
+    public function __construct(CheckAvailableTimeQueryHandler $handler)
     {
-        $this->handler = $handler ?? new AppointmentHandler();
-    }
-
-    /**
-     * @param Request $request
-     * @return JsonResponse
-     */
-    public function post(Request $request)
-    {
-        return $this->handler->checkTime($request->get("datetime_start"));
+        $this->handler = $handler;
     }
 
     /**
      * @param string $startDateTime
      * @return JsonResponse
      */
-    public function get(string $startDateTime)
+    public function checkTime(string $startDateTime): JsonResponse
     {
-        return $this->handler->checkTime($startDateTime);
+        $result = $this->handler->execute($startDateTime);
+        return new JsonResponse($result);
     }
 }

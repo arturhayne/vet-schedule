@@ -1,9 +1,8 @@
 <?php
-declare(strict_types=1);
 
 use Illuminate\Http\Response;
 
-class CheckAvailableTimeTest  extends TestCase
+class CheckAvailableTimeTest extends TestCase
 {
     /**
      * @test
@@ -13,6 +12,7 @@ class CheckAvailableTimeTest  extends TestCase
     public function it_should_return_available_true_for_no_booked_date_time(string $dateTime): void
     {
         $response = $this->get('/checkTime/' . $dateTime);
+        $response->assertResponseStatus(Response::HTTP_OK);
         $result = json_decode($response->response->getContent(), true);
         $this->assertTrue($result['available']);
     }
@@ -62,9 +62,21 @@ class CheckAvailableTimeTest  extends TestCase
     public function it_should_return_available_false_for_invalid_date_time(string $dateTime): void
     {
         $response = $this->get('/checkTime/' . $dateTime);
+        $response->assertResponseStatus(Response::HTTP_BAD_REQUEST);
         $result = json_decode($response->response->getContent(), true);
         $this->assertFalse($result['available']);
         $this->assertEquals('error', $result['status']);
+    }
+
+    /**
+     * @test
+     * @dataProvider invalidDateTimeProvider
+     * @param string $dateTime
+     */
+    public function it_should_return_not_found_when_empty_date_time(): void
+    {
+        $response = $this->get('/checkTime/');
+        $response->assertResponseStatus(Response::HTTP_NOT_FOUND);
     }
 
     /**

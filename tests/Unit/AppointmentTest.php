@@ -1,9 +1,12 @@
 <?php
 declare(strict_types=1);
 
-use App\Models\Appointment;
+namespace Unit;
 
-class AppointmentTest extends TestCase
+use DateInterval;
+use VetSchedule\Domain\Appointment;
+
+class AppointmentTest extends \TestCase
 {
     /**
      * @test
